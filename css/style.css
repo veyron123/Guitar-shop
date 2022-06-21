@@ -84,15 +84,26 @@ html, body {
     padding: 0 15px;
 }
 
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+
+}
+
 .header__container {
     min-height: 160px;
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    gap: 131px;
+    
     
 }
 
 .header__logo {
-    margin-right: 131px;
+    /* margin-right: 131px; */
 }
 
 .header__logo > span {
@@ -120,15 +131,22 @@ html, body {
 /* ------------------------ */
 .main{
      flex:1 1 auto
+
 }
+
 
 .main__container {
 }
+
+.main__intro {
+    display: flex;
+}
 .main__content-box {
-    margin: 235px 0 220px;
+    padding: 235px 0 220px;
     width: 469px;
 }
 .content-box {
+    flex: 0 1 50% ;
 }
 .content-box__title {
     font-family: "CalSans";
@@ -178,6 +196,8 @@ font-weight: 600;
 .actions__icon:not(:last-child) {
     margin-right: 27px;
 }
+
+
 
 
 
