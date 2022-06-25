@@ -44,16 +44,19 @@ table {
 }
 
 a{
-    text-decoration: none;
-    
+    text-decoration: none;  
 }
 
 /* --------------------------- */
 
+@import url(https://fonts.googleapis.com/css?family=Poppins:regular,500,600&display=swap);
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 @font-face {
     font-family: CalSans;
     font-display: swap;
-    font-weight: 400;
+    font-weight: 600;
     font-style: normal;
     src: url("../fonts/CalSans-SemiBold.woff2") format("woff2"), url("../fonts/CalSans-SemiBold.woff") format("woff");
 }
@@ -61,13 +64,13 @@ a{
 html, body {
     height: 100%;
     min-width: 320px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 21px;
-    color: #666;
-    line-height: 1;
 
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    line-height: 1;
+    color: #666;
 
 }
 
@@ -90,16 +93,13 @@ html, body {
     left: 0;
     z-index: 10;
     width: 100%;
-
 }
 
 .header__container {
-    min-height: 160px;
+    min-height: 152px;
     display: flex;
     align-items: center;
-    gap: 131px;
-    
-    
+    column-gap: 131px;
 }
 
 .header__logo {
@@ -119,12 +119,59 @@ html, body {
 .menu__list {
     display: inline-flex;
     column-gap: 56px;
+    row-gap:10px;
+    flex-wrap: wrap;
+    padding: 5px 0;
 }
 
 .menu__item:hover {
     text-decoration: underline;
+}
+
+.meni__item{
+    
+}
+
+.menu__link {
+ 
+    color: rgba(18, 18, 18, 0.4);
+    font-weight: 500;
+}
+
+
+@media(max-width: 1092px){
+
+    .header__container {
+        gap:56px;
+        min-height: 100px;
+    }
 
 }
+
+@media(max-width: 767.98px){
+
+    .header__container {
+        
+        min-height: 65px;
+    }
+
+}
+
+@media(max-width: 479px){
+
+    .header__container {
+        column-gap:10px;
+       
+    }
+
+    .header__logo {
+        width: 28px;
+        overflow: hidden;
+        flex: 0 0 28px;
+    }
+
+}
+
 
 
 
@@ -136,11 +183,10 @@ html, body {
 
 
 .main__container {
-}
-
-.main__intro {
     display: flex;
 }
+
+
 .main__content-box {
     padding: 235px 0 220px;
     width: 469px;
@@ -149,13 +195,16 @@ html, body {
     flex: 0 1 50% ;
 }
 .content-box__title {
-    font-family: "CalSans";
-    font-style: normal;
-    font-weight: 600;
+    font-family: CalSans;
     font-size: 56px;
+    line-height: 1.2;
 
     color: #121212;
 
+    
+}
+
+.content-box__title:not(:last-child){
     margin-bottom: 16px;
 }
 .content-box__title>span {
@@ -163,41 +212,113 @@ html, body {
 }
 .content-box__text {
     font-weight: 500;
-    font-size: 16px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    line-height: 1.5;
+    max-width:420px;
+}
 
+.content-box__text:not(:last-child){
     margin-bottom: 33px;
 }
 .content-box__download {
 }
 .actions {
-    display: inline-flex;
+    display: flex;
     align-items: center;
 }
-.actions__btn {
+.actions__btn:not(:last-child) {
     margin-right: 40px;
 }
 .btn {
-    display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 18px 48px;
-gap: 10px;
+    text-align: center;
 
-width: 192px;
-height: 60px;
+    padding: 18px 48px;
 
-background: #FF6428;
-border-radius: 40px;
-color:#fff;
-font-weight: 600;
+
+    background: #FF6428;
+    border-radius: 40px;
+    color:#fff;
+    font-weight: 600;
+    line-height: 1.5;
+    transition: all 0.2s ;
+}
+.btn:hover {
+    background-color: #ff6f37;
+    ;
 }
 .actions__icon:not(:last-child) {
     margin-right: 27px;
 }
 
+.main__decor { 
+    flex:0 1 50%;
+}
+.decor {
+    
+}
+.decor__image {
+    position: relative;
+    margin-right: -120px;
+}
+.decor__image::after {
+    content:"";
+    background: url(../img/logo-buterfly.png) 0 0 no-repeat;
+    height: 80px;
+    width: 80px;
+    bottom: 0;
+    right:36%;
+    position: absolute;
+    transform: translate(0, 50%);
+}
 
+@media(max-width: 1092px){
 
+    .decor__image img {
+        width:100%;
+    }
+    .main__content-box {
+        padding-top: 120px;
+        flex:0 0 60%;
+    }
+    .main__decor {
+        flex:0 0 40%;
+    }
 
+}
 
+@media(max-width: 767.98px){
+    .main__decor, .decor__image::after {
+        display: none;
+    }
+
+    .main__content-box {
+        padding-top: 70px;
+        flex:1 1 100%;
+    }
+
+    .content-box__title {
+        font-size: 44px;    }
+}
+
+@media(max-width: 479.98px){
+    .content-box__actions{
+        flex-wrap: wrap;
+        justify-content: center;
+        /* align-items:center; */
+    }
+
+    .actions__btn:not(:last-child) {
+        flex:1 1 100%;
+       margin-right: 0;
+    }
+
+    .actions__btn:not(:last-child) {
+        flex:1 1 100%;
+        margin-bottom: 15px;
+    }
+
+    .actions{
+        justify-content: center;
+    }
+
+}
